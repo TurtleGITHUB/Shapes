@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaSCript Shapes</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+	<header>
+		<h1>SHAPES!</h1>
+	</header>
+
+	<article>
+		<h2>Click a Shape</h2>
+		<div id="square"></div>
+		<div id="triangle"></div>
+		<div id="circle"></div>
+	</article>
+
+	<script>
+		/*This script should make each shape clickable. When a shape is clicked on, a dialog box will appear confirming which shape was clicked */
+
+		// array variable that collects all the <div> elements in the document
+		var allDivs = document.getElementsByTagName("div");
+
+		// loop through the allDivs array, add a click event listener to each
+		for(var i=0; i < allDivs.length; i++) {
+			allDivs[i].addEventListener("click", helloShape);}
+
+			// definition of the helloShape() function
+			function helloShape(evt) {
+				// variable that will store the id generated in the the event data object
+				var shapeID = evt.target.id;
+				// generate an alert box that uses the shapeID to alert the user as to which shape was clicked on
+				window.alert("You clicked on the " + shapeID + ".");
+				
+			}
+	</script>
+</body>
+</html>
